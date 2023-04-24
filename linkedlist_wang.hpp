@@ -1,5 +1,5 @@
-#ifndef DOUBLYLINKEDLIST_H
-#define DOUBLYLINKEDLIST_H
+#ifndef DOUBLYLINKEDLIST_HPP
+#define DOUBLYLINKEDLIST_HPP
 #include <iostream>
 #include <stdexcept>
 
@@ -406,12 +406,13 @@ template <typename T>
 void DoublyLinkedList<T>::PrintList()
 {
     Node<T> *current = head;
+    std::cout << "[";
     while (current != nullptr)
     {
-        std::cout << current->getData() << " ";
+        std::cout << current->getData() << "]=[";
         current = current->getNext();
     }
-    std::cout << std::endl;
+    std::cout << "]" <<std::endl;
 }
 template <typename T>
 void DoublyLinkedList<T>::Empty()

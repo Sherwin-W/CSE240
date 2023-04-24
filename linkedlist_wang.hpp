@@ -12,7 +12,7 @@ private:
     Node<T> *previous;
 
 public:
-    Node() : {}
+    Node() {}
     Node(T data) : data(data), next(nullptr), previous(nullptr) {}
     Node(T data, Node<T> *next) : data(data), next(next), previous(nullptr) {}
     T getData() const { return data; }

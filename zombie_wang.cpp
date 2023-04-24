@@ -1,56 +1,54 @@
 #include "zombie_wang.h"
 #include <iostream>
-#include <string>
 
 Zombie::Zombie()
 {
-    int randNum = rand() % 6;
+    int randNum = rand() % 6
     switch (randNum)
     {
+    case 0:
+        m_type = 'R';
+        break;
     case 1:
-        letter = 'R';
+        m_type = 'Y';
         break;
     case 2:
-        letter = 'Y';
+        m_type = 'G';
         break;
     case 3:
-        letter = 'G';
+        m_type = 'B';
         break;
     case 4:
-        letter = 'B';
+        m_type = 'C';
         break;
-    case 5:
-        letter = 'C';
+    default:
+        m_type = 'M';
         break;
-    case 6:
-        letter = 'M';
-        break;
-        m_type = randNum;
     }
+}
 
-    Zombie::Zombie(char type)
-    {
-        m_type = type;
-    }
+Zombie::Zombie(char type)
+{
+    m_type = type;
+}
 
-    char Zombie::getType()
-    {
-        return m_type;
-    }
+char Zombie::getType()
+{
+    return m_type;
+}
 
-    bool Zombie::operator==(Zombie &other)
-    {
-        return m_type == other.m_type;
-    }
+bool Zombie::operator==(Zombie &other)
+{
+    return m_type == other.m_type;
+}
 
-    bool Zombie::operator!=(Zombie &other)
-    {
-        return m_type != other.m_type;
-    }
+bool Zombie::operator!=(Zombie &other)
+{
+    return m_type != other.m_type;
+}
 
-    std::ostream &operator<<(std::ostream &os, Zombie &zombie)
-    {
-        os << zombie.m_type;
-        return os;
-    }
+std::ostream &operator<<(std::ostream &os, Zombie &zombie)
+{
+    os << zombie.m_type;
+    return os;
 }

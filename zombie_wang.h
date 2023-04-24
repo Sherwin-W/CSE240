@@ -2,9 +2,6 @@
 #define ZOMBIE_WANG_H
 
 #include <iostream>
-#include <vector>
-#include <string>
-
 class Zombie
 {
 public:

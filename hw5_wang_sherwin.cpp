@@ -46,6 +46,27 @@ void rainbow_action(DoublyLinkedList<Zombie> &list, Zombie randomZomb)
 }
 void friends_action(DoublyLinkedList<Zombie> &list, Zombie randomZomb)
 {
+    int coinFlip = rand() % 2;
+    if (list.Find(randomZomb) != nullptr)
+    {
+        if (coinFlip == 0)
+        {
+            list.AddBefore(list.Find(randomZomb), randomZomb);
+        }
+        else
+        {
+            list.AddAfter(list.Find(randomZomb), randomZomb);
+        }
+    }
+    else
+    {
+        caboose_action(randomZomb);
+    }
+}
+void everyFive(DoublyLinkedList<Zombie> &list)
+{
+    list.RemoveFromFront();
+    list.RemoveFromEnd();
 }
 int main(int argc, char *argv[])
 {
@@ -53,7 +74,7 @@ int main(int argc, char *argv[])
     int randRound;
     char randZomb;
 
-    DoublyLinkedList<Zombie> zombList = DoublyLinkedList<Zombie>();
+    DoublyLinkedList<Zombie> zombList;
     char char1 = 'R';
     Zombie *temp = new Zombie(char1);
     brains_action(zombList, *temp);

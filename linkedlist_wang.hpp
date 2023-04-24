@@ -12,6 +12,7 @@ private:
     Node<T> *previous;
 
 public:
+    //node methods
     Node() {}
     Node(T data) : data(data), next(nullptr), previous(nullptr) {}
     Node(T data, Node<T> *next) : data(data), next(next), previous(nullptr) {}
@@ -32,12 +33,13 @@ private:
     int size;
 
 public:
+//forward declaration
     // Default constructor
     DoublyLinkedList() : head(nullptr), tail(nullptr), size(0) {}
     DoublyLinkedList(T data) : head(nullptr), tail(nullptr), size(0) {}
     // Destructor
     ~DoublyLinkedList();
-
+//required methods
     void AddToFront(T data);
     void AddToEnd(T data);
     void AddAtIndex(T data, int index);

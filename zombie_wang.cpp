@@ -1,24 +1,25 @@
+//defines the methods mentioned in zombie_wang.h
 #include "zombie_wang.h"
 #include <iostream>
-
+//generates random char when create Zombie
 Zombie::Zombie()
 {
     int randNum = rand() % 6
-    switch (randNum)
-    {
-    case 0:
+    switch (randNum){
+    
+    case 1:
         m_type = 'R';
         break;
-    case 1:
+    case 2:
         m_type = 'Y';
         break;
-    case 2:
+    case 3:
         m_type = 'G';
         break;
-    case 3:
+    case 4:
         m_type = 'B';
         break;
-    case 4:
+    case :
         m_type = 'C';
         break;
     default:

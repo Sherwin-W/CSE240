@@ -4,7 +4,7 @@
 #include <list>
 
 using namespace std;
-
+//all conga actions
 void engine_action(DoublyLinkedList<Zombie> list, Zombie randomZomb)
 {
     list.AddToFront(randomZomb);
@@ -86,11 +86,11 @@ int main(int argc, char *argv[])
     while (numRounds != 0)
     {
         Zombie *temp = new Zombie();
-        randZomb = temp.getType();
+        randZomb = temp->getType();
         action = rand() % 8;
         switch (action)
         {
-
+        //different case based on random number
         case 1:
             caboose_action(zombList, randZomb);
             phrase = "Caboose!";
@@ -124,11 +124,12 @@ int main(int argc, char *argv[])
             phrase = "Engine!";
             break;
         }
+        //formatted output
         std::cout << "Round: " << currRound << std::endl;
         std::cout << "Size: " << zombList.Length() << " :: ";
         zombList.PrintList();
         std::cout << std::endl
-                  << "New Zombie: [<" << temp.getType() << ">] -- ";
+                  << "New Zombie: [<" << temp->getType() << ">] -- ";
         std::cout << "Action: [<" << phrase << ">]" << std::endl;
         std::cout << "The conga line is now:" << std::endl;
         std::cout << "Size: " << zombList.Length() << " :: ";

@@ -4,7 +4,7 @@
 //generates random char when create Zombie
 Zombie::Zombie()
 {
-    int randNum = rand() % 6
+    int randNum = rand() % 6;
     switch (randNum){
     
     case 1:

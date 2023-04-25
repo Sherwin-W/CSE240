@@ -1,16 +1,19 @@
-CC=g++
-CFLAGS=-c -Wall
+OBJS	= zombie_wang.o hw5_wang_sherwin.o
+SOURCE	= zombie_wang.cpp hw5_wang_sherwin.cpp
+HEADER	= linkedList_wang.hpp zombie_wang.hpp
+OUT	= exe
+CC	= g++
+FLAGS	= -g -c -Wall
+LFLAGS	=
 
-all: program
+all: $(OBJS)
+	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
 
-program: hw5_wang_sherwin.o zombie_wang.o
-	$(CC) hw5_wang_sherwin.o zombie_wang.o -o program
-
-hw5_wang_sherwin.o: hw5_wang_sherwin.cpp linkedList_wang.hpp
-	$(CC) $(CFLAGS) hw5_wang_sherwin.cpp
-
-zombie_wang.o: zombie_wang.cpp zombie_wang.h
+zombie_wang.o: zombie_wang.cpp
 	$(CC) $(CFLAGS) zombie_wang.cpp
 
+hw5_wang_sherwin.o: hw5_wang_sherwin.cpp
+	$(CC) $(CFLAGS) hw5_wang_sherwin.cpp
+
 clean:
-	rm -rf *o program
+	rm -f $(OBJS) $(OUT)

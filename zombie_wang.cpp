@@ -19,7 +19,7 @@ Zombie::Zombie()
     case 4:
         m_type = 'B';
         break;
-    case :
+    case 5:
         m_type = 'C';
         break;
     default:
